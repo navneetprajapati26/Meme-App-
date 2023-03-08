@@ -7,10 +7,10 @@ class MemeModel {
   bool? spoiler;
   String? author;
   int? ups;
-  List<String>? preview;
+  //List<String>? preview;
 
-  MemeModel(
-      {this.postLink,
+  MemeModel({
+        this.postLink,
         this.subreddit,
         this.title,
         this.url,
@@ -18,7 +18,8 @@ class MemeModel {
         this.spoiler,
         this.author,
         this.ups,
-        this.preview});
+       // this.preview
+  });
 
   MemeModel.fromJson(Map<String, dynamic> json) {
     postLink = json['postLink'];
@@ -29,7 +30,7 @@ class MemeModel {
     spoiler = json['spoiler'];
     author = json['author'];
     ups = json['ups'];
-    preview = json['preview'].cast<String>();
+    //preview = json['preview'].cast<String>();
   }
 
   Map<String, dynamic> toJson() {
@@ -42,7 +43,7 @@ class MemeModel {
     data['spoiler'] = this.spoiler;
     data['author'] = this.author;
     data['ups'] = this.ups;
-    data['preview'] = this.preview;
+    //data['preview'] = this.preview;
     return data;
   }
 }
