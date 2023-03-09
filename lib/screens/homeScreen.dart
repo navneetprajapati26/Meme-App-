@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:meme_app/provider/memeProvider.dart';
 import 'package:meme_app/screens/saveScreen.dart';
 import 'package:meme_app/util/btn.dart';
+import 'package:meme_app/util/loding.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'dart:io';
@@ -86,10 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           loadingBuilder: (context, child, loadingProgress) {
                             if (loadingProgress == null) return child;
                             return const Center(
-                                child: SizedBox(
-                              height: 400,
-                              width: 400,
-                            ));
+                                child: Loading());
                           },
                           //fit: BoxFit.fill,
                         )),

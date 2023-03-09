@@ -8,6 +8,8 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 
+import '../util/loding.dart';
+
 class SaveScreen extends StatefulWidget {
   const SaveScreen({Key? key}) : super(key: key);
 
@@ -66,10 +68,7 @@ class _SaveScreenState extends State<SaveScreen> {
                           loadingBuilder: (context, child, loadingProgress) {
                             if (loadingProgress == null) return child;
                             return const Center(
-                                child: SizedBox(
-                              height: 400,
-                              width: 400,
-                            ));
+                                child: Loading());
                           },
                           //fit: BoxFit.fill,
                         )),
