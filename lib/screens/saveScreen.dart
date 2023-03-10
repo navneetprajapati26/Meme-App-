@@ -23,7 +23,6 @@ class _SaveScreenState extends State<SaveScreen> {
     final file = await new File('${tempDir.path}/image.png').create();
     final response = await http.get(Uri.parse(imageUrl));
     await file.writeAsBytes(response.bodyBytes);
-
     await Share.shareFiles(
       [file.path],
       text: 'Check out this cool image!',

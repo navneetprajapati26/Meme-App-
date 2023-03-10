@@ -73,7 +73,6 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SafeArea(
           child: Center(
             child: Consumer<MemeProvider>(builder: (context, value, child) {
-              print(value.meme!.author);
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -110,7 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(width: 10,),
               Btn(
                   onPressed: () {
-                    shareImage(value.meme!.url!);
+                    //shareImage(value.meme!.url!);
+                    value.shareImage(value.meme!.url!);
                   },
                   btnName: "Share"),
               SizedBox(width: 10,),
